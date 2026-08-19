@@ -777,14 +777,6 @@ section { padding: 88px 0; }
    About / bio
    ========================================================================== */
 
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.3fr;
-  gap: 64px;
-  align-items: start;
-}
-@media (max-width: 860px) { .about-grid { grid-template-columns: 1fr; gap: 40px; } }
-
 .monogram-frame {
   aspect-ratio: 1;
   border: 1px solid var(--line-strong);
@@ -800,6 +792,7 @@ section { padding: 88px 0; }
   background-color: var(--bg-raised);
   overflow: hidden;
 }
+
 .monogram-frame::before, .monogram-frame::after,
 .monogram-frame .c1, .monogram-frame .c2 {
   content: "";
@@ -812,6 +805,7 @@ section { padding: 88px 0; }
 .monogram-frame::after { bottom: 10px; right: 10px; border-left: none; border-top: none; }
 .monogram-frame .c1 { top: 10px; right: 10px; border-left: none; border-bottom: none; }
 .monogram-frame .c2 { bottom: 10px; left: 10px; border-right: none; border-top: none; }
+
 .monogram {
   font-family: var(--font-display);
   font-size: clamp(3rem, 9vw, 5rem);
@@ -821,12 +815,19 @@ section { padding: 88px 0; }
   background-clip: text;
   color: transparent;
 }
+
+/* --- the fix is here --- */
 .about-photo {
-  width: calc(100% - 48px);
-  height: calc(100% - 48px);
+  position: absolute;
+  inset: 24px;              /* same as your old "48px less on each side" */
+  width: auto;
+  height: auto;
   object-fit: cover;
+  object-position: center top;  /* keeps your face in frame on crop */
   border-radius: var(--radius);
+  z-index: 1;
 }
+
 .monogram-caption {
   position: absolute;
   bottom: 24px;
@@ -857,7 +858,6 @@ section { padding: 88px 0; }
   border-radius: var(--radius);
   color: var(--text-soft);
 }
-
 /* ==========================================================================
    Skills
    ========================================================================== */
