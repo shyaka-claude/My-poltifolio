@@ -842,6 +842,12 @@ section { padding: 88px 0; }
   gap: 10px;
   margin: 22px 0 26px;
 }
+
+.accent-text {
+  color: var(--cyan-bright);
+  font-weight: 700;
+}
+
 .role-chip {
   font-family: var(--font-mono);
   font-size: 12px;
