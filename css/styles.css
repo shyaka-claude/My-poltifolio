@@ -829,6 +829,10 @@ section { padding: 88px 0; }
   color: var(--text);
 }
 
+.sky-text {
+  color: #38BDF8;
+}
+
 .about-content {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
