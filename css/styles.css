@@ -777,86 +777,190 @@ section { padding: 88px 0; }
    About / bio
    ========================================================================== */
 
-.monogram-frame {
-  aspect-ratio: 1;
-  border: 1px solid var(--line-strong);
-  border-radius: var(--radius);
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background:
-    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-  background-size: 24px 24px;
-  background-color: var(--bg-raised);
-  overflow: hidden;
+/* ==============================
+   ABOUT SECTION
+================================ */
+
+.about-section {
+    padding: 100px 20px;
+    background: #ffffff;
 }
 
-.monogram-frame::before, .monogram-frame::after,
-.monogram-frame .c1, .monogram-frame .c2 {
-  content: "";
-  position: absolute;
-  width: 14px; height: 14px;
-  border: 1px solid var(--cyan);
-  z-index: 2;
-}
-.monogram-frame::before { top: 10px; left: 10px; border-right: none; border-bottom: none; }
-.monogram-frame::after { bottom: 10px; right: 10px; border-left: none; border-top: none; }
-.monogram-frame .c1 { top: 10px; right: 10px; border-left: none; border-bottom: none; }
-.monogram-frame .c2 { bottom: 10px; left: 10px; border-right: none; border-top: none; }
-
-.monogram {
-  font-family: var(--font-display);
-  font-size: clamp(3rem, 9vw, 5rem);
-  font-weight: 600;
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+.about-container {
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
-/* --- the fix is here --- */
-.about-photo {
-  position: absolute;
-  inset: 0;                     /* was: inset: 24px — this removes the gap */
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  border-radius: var(--radius); /* matches the frame's rounded corners */
-  z-index: 1;
+.about-header {
+    max-width: 850px;
+    margin-bottom: 70px;
 }
 
-.monogram-caption {
-  position: absolute;
-  bottom: 24px;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--muted);
-  letter-spacing: .05em;
+.section-label {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+    opacity: 0.65;
 }
 
-.bio-roles {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 22px 0 26px;
+.about-header h1 {
+    font-size: clamp(42px, 6vw, 72px);
+    line-height: 1.05;
+    margin: 0 0 30px;
+    font-weight: 700;
 }
 
-.accent-text {
-  color: var(--cyan-bright);
-  font-weight: 700;
+.about-intro {
+    font-size: 21px;
+    line-height: 1.7;
+    max-width: 800px;
+    margin: 0;
+    opacity: 0.8;
 }
 
-.role-chip {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: .04em;
-  padding: 6px 12px;
-  border: 1px solid var(--line-strong);
-  border-radius: var(--radius);
-  color: var(--text-soft);
+.about-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+}
+
+.about-block h2 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.about-block p {
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 18px;
+    opacity: 0.8;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.skills-list span {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.skills-list span:hover {
+    transform: translateY(-2px);
+}
+
+.about-highlight {
+    grid-column: 1 / -1;
+    padding: 40px;
+    margin: 10px 0;
+    border-left: 4px solid currentColor;
+}
+
+.about-highlight p {
+    font-size: 28px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.about-cta {
+    margin-top: 90px;
+    padding-top: 60px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+}
+
+.about-cta h2 {
+    font-size: 36px;
+    margin-bottom: 12px;
+}
+
+.about-cta p {
+    font-size: 17px;
+    opacity: 0.7;
+    margin-bottom: 30px;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.cta-buttons a {
+    text-decoration: none;
+    padding: 14px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.btn-primary {
+    background: #111;
+    color: #fff;
+}
+
+.btn-secondary {
+    border: 1px solid #ccc;
+    color: #111;
+}
+
+.cta-buttons a:hover {
+    transform: translateY(-2px);
+}
+
+
+/* ==============================
+   MOBILE RESPONSIVE
+================================ */
+
+@media (max-width: 768px) {
+
+    .about-section {
+        padding: 70px 20px;
+    }
+
+    .about-header {
+        margin-bottom: 50px;
+    }
+
+    .about-header h1 {
+        font-size: 42px;
+    }
+
+    .about-intro {
+        font-size: 18px;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .about-highlight {
+        grid-column: auto;
+        padding: 25px;
+    }
+
+    .about-highlight p {
+        font-size: 23px;
+    }
+
+    .about-cta {
+        margin-top: 60px;
+    }
+
+    .about-cta h2 {
+        font-size: 30px;
+    }
 }
 /* ==========================================================================
    Skills
