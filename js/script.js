@@ -56,11 +56,11 @@ document.addEventListener('DOMContentLoaded', function () {
   }, 3000);
 });
 
-// Rotating role titles under the name (Frontend Web Developer / Web Design / etc.)
+// Rotating role titles under the name (Mechanical Engineer / Front-end Web Developer / etc.)
 document.addEventListener('DOMContentLoaded', function () {
   var el = document.querySelector('.rotator-text');
   if (!el) return;
-  var roles = ['Frontend Web Developer', 'Web Design', 'UI Designer', 'Mechanical Engineer'];
+  var roles = ['Mechanical Engineer', 'Front-end Web Developer', 'Graphics Designer', 'UI & UX Designer'];
   var i = 0;
   function show(index) {
     el.innerHTML = '<span>' + roles[index] + '</span>';
