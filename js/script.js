@@ -293,7 +293,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // --------------------------------------------------------
 
     emailjs.sendForm(
-      'service_k0svxim',
+      'service_ssnkaa9',
       'template_0vrj396',
       form
     )
@@ -305,7 +305,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // ------------------------------------------------------
 
       return emailjs.sendForm(
-        'service_k0svxim',
+        'service_ssnkaa9',
         'template_p2pjb4i',
         form
       );
