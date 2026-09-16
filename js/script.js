@@ -292,11 +292,11 @@ document.addEventListener('DOMContentLoaded', function () {
     // SEND MESSAGE TO YOUR GMAIL
     // --------------------------------------------------------
 
-    emailjs.sendForm(
-      'service_ssnkaa9',
-      'template_0vrj396',
-      form
-    )
+   emailjs.sendForm(
+  'service_6qlmj8i',
+  'template_0vrj396',
+  form
+)
 
     .then(function () {
 
@@ -304,13 +304,13 @@ document.addEventListener('DOMContentLoaded', function () {
       // SEND AUTO-REPLY TO THE VISITOR
       // ------------------------------------------------------
 
-      return emailjs.sendForm(
-        'service_ssnkaa9',
-        'template_p2pjb4i',
-        form
-      );
+       return emailjs.sendForm(
+    'service_6qlmj8i',
+    'template_p2pjb4i',
+    form
+  );
 
-    })
+})
 
     .then(function () {
 
